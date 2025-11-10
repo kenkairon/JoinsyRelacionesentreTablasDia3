@@ -76,6 +76,7 @@ INSERT INTO clientes VALUES
 (3, 'María Rodríguez', 'maria@email.com', 'Madrid');
 ```
 ![Tabla Clientes](img/Clientes.png)
+### Insertar pedidos
 ```sql
 INSERT INTO pedidos VALUES
 (1, 1, '2024-01-15', 150.50),
