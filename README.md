@@ -88,6 +88,8 @@ INSERT INTO pedidos VALUES
 ### 1 Compara cuántas filas devuelve cada tipo de join
 ```sql
 -- INNER JOIN: Solo clientes con pedidos
+.mode column
+.headers on
 SELECT c.nombre, p.fecha_pedido, p.total
 FROM clientes c
 INNER JOIN pedidos p ON c.id = p.cliente_id;
@@ -96,6 +98,8 @@ INNER JOIN pedidos p ON c.id = p.cliente_id;
 
 ```sql
 -- LEFT JOIN: Todos los clientes, con pedidos si existen
+.mode column
+.headers on
 SELECT c.nombre, COUNT(p.id) as num_pedidos, SUM(p.total) as total_compras
 FROM clientes c
 LEFT JOIN pedidos p ON c.id = p.cliente_id
@@ -105,6 +109,8 @@ GROUP BY c.id, c.nombre;
 
 ```sql
 -- Clientes de Madrid con sus pedidos
+.mode column
+.headers on
 SELECT c.nombre, c.ciudad, p.fecha_pedido, p.total
 FROM clientes c
 LEFT JOIN pedidos p ON c.id = p.cliente_id
